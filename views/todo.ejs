@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>To-do-app</title>
+        <% include partials/head.ejs %>
+    </head>
+    
+    <body>
+        
+        <div class="container mt-5">
+                
+            <div class="row">
+              
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="todo" placeholder="Add to List..." required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="btn btn-outline-success">Add</button>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                      <ul class="list-group mt-3">
+                        <% for(var i=0;i<todo.length;i++){ %>
+                           <li class="list-group-item list-group-item-action"><%= todo[i].todo %><button class="fa fa-trash btn btn-danger float-right" id="<%=todo[i].id %>"></button></li>
+                        <% } %> 
+                      </ul>
+                    </div>   
+                </div>
+        </div>
+     <% include partials/scripts.ejs %>  
+    </body>
+   
+</html>
